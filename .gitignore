@@ -1,0 +1,94 @@
+# IDE
+.idea/
+.vscode/
+
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+*.pkl
+*~
+desktop.ini
+/README.md
+!/README.md
+result.json
+新建文本文档.txt
+
+# Runtime dumps, screenshots, and analysis outputs
+Explorer/analysis/
+Explorer/analysis_compare/
+Explorer/apiTrigger/
+Explorer/dumps/
+Explorer/hooks/
+Explorer/manual_test/
+Explorer/saved/
+Explorer/coverage.txt
+Explorer/processed_failed.txt
+Explorer/processed_success.txt
+ui/metrics_out/
+ui/result/
+ui/screenshots/
+
+# Experiment tables and generated figures
+*.pcap
+*.mitm
+*_result.json
+*summary*.csv
+*summary*.json
+*metrics*.csv
+*violation*.png
+*violation*.svg
+fig*.png
+fig*.pdf
+fig*.svg
+Explorer/*.csv
+Explorer/*.json
+Explorer/*.png
+Explorer/*.svg
+ui/*.csv
+ui/*.json
+ui/*.jsonl
+ui/*.txt
+ui/*.png
+ui/*.pdf
+ui/*.svg
+!ui/config.example.json
+
+# Datasets and model training outputs
+privacypolicy/data/
+privacypolicy/ner/*.json
+privacypolicy/ner/*.jsonl
+privacypolicy/models/
+Explorer/basemodel/
+Explorer/pretrainedModel/
+
+# Large binary tools and app packages
+atx-agent*/
+frp_*/
+frida-server*
+source/*.apk
+source/*.tar.gz
+source/*.xz
+source/*.so
+source/hluda-server
+source/frida-server-*/
+source/frida-server*
+source/atx-agent*
+Explorer/apps/
+Explorer/ap/
+Explorer/ap2/
+Explorer/apps_unexplore/
+Explorer/ap2yes/
+
+# Local configs containing machine-specific paths or credentials
+ui/config.json
+ui/privacy_analyzer_config.json

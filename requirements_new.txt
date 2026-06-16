@@ -1,0 +1,24 @@
+
+apt update
+apt install -y libgl1 libxrender1 libsm6 libxext6 libgl1-mesa-glx ffmpeg
+
+apt install adb
+
+pip install loguru androguard==3.3.5 opencv-python imgsim -U sentence-transformers rich frida==16.0.1 frida-tools==12.0.1 Levenshtein imagehash wordninja setuptools==65.5.0 similarities pydantic pytesseract uiautomator2==2.16.16 mitmproxy dpkt
+
+
+adb shell "settings delete global http_proxy; settings delete global global_http_proxy_host; settings delete global global_http_proxy_port; settings delete global global_http_proxy_exclusion_list"
+
+
+sysctl -w net.ipv4.ip_forward=1
+# 当本机进程访问 127.0.0.1:5555 时，重定向到 5556
+iptables -t nat -A OUTPUT -p tcp -d 127.0.0.1 --dport 5555 -j REDIRECT --to-port 5556
+
+# 2. Frida (27042 -> 27043)
+iptables -t nat -A OUTPUT -p tcp -d 127.0.0.1 --dport 27042 -j REDIRECT --to-port 27043
+
+# 3. atx-agent (7912 -> 7913)
+iptables -t nat -A OUTPUT -p tcp -d 127.0.0.1 --dport 7912 -j REDIRECT --to-port 7913
+
+# 4. uiautomator2 (9008 -> 9009)
+iptables -t nat -A OUTPUT -p tcp -d 127.0.0.1 --dport 9008 -j REDIRECT --to-port 9009
